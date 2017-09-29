@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Image, Text, TouchableOpacity, TouchableHighlight} from 'react-native';
+import {View, Image, Platform,Text, TouchableOpacity, TouchableHighlight} from 'react-native';
 import {SecretsScreenStyle} from './Styles';
 import {Constant} from './Constants';
 
@@ -17,10 +17,14 @@ class SecretItem extends React.Component {
 
   render() {
     let num = parseInt(117*Math.random());
-    let img = 'emoji'+num;
+    var img = 'emoji'+num;
+
+
+    console.log('OS: '+Platform.Platform);
+
     return (
 
-      <TouchableOpacity style={SecretsScreenStyle.container} onPress={() => {
+      <TouchableOpacity style={SecretsScreenStyle.container} activeOpacity={1} onPress={() => {
         console.log('selectRow')
       }} onLayout={this._onLayout}>
 

@@ -1,6 +1,8 @@
 import React from 'react';
 import {Text,ActivityIndicator, View, Image, StyleSheet, Button, TextInput} from 'react-native';
 import {MySecretScreenStyle} from './Styles';
+import {connect} from 'react-redux';
+import {refreshSecrets} from './actions/actions';
 
 
 class MySecretScreen extends React.Component {
@@ -38,6 +40,7 @@ class MySecretScreen extends React.Component {
       });
 
       this.refs['textInput'].clear();
+      this.props.dispatch(refreshSecrets());
       alert('发布成功')
     }
 
@@ -79,5 +82,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#cccccc',
   }});
 
+//一定要进行redux和componet的绑定，否则this.props.dispatch等相关方法无法调用。
 
-module.exports = {MySecretScreen};
+const mapStateToProps = state => ({
+  counter: state.counter //key 将会绑定到this.props中,值是在reducer中定义的回调函数 。
+})
+
+export default connect(mapStateToProps)(MySecretScreen);
+

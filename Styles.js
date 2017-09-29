@@ -48,7 +48,6 @@ var SecretsScreenStyle = StyleSheet.create({
     width:20,
     height:20,
     borderRadius:15,
-    backgroundColor:'green',
 
   },
   title:{
@@ -58,7 +57,7 @@ var SecretsScreenStyle = StyleSheet.create({
   content:{
     marginTop:10,
     marginBottom:10,
-    lineHeight:20,
+    lineHeight:30,
     paddingLeft:5,
     paddingRight:5,
   }
