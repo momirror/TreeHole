@@ -83,6 +83,7 @@ class SecretsScreen extends React.Component {
 
     return (
       <View>
+        <Text>code push 测试1</Text>
         <FlatList refreshing={this.state.refreshing} onRefresh={this._pullDownToGetData}
                   onEndReachedThreshold={0.000000001} onEndReached={this._pullDownToGetData}
                   style={MySecretScreenStyle.list} data={this.state.secrets}

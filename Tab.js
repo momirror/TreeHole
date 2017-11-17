@@ -8,6 +8,7 @@ import SecretsScreen from './SecretsScreen';
 import MySecretScreen from './MySecretScreen';
 import Verify from './Verify';
 import NameScreen from './NameScreen';
+// import './TestNavScreen';
 
 const MainScreenNavigator = TabNavigator({
   SecretCamp: {

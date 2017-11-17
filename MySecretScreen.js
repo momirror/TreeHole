@@ -3,12 +3,19 @@ import {Text,ActivityIndicator, View, Image, StyleSheet, Button, TextInput} from
 import {MySecretScreenStyle} from './Styles';
 import {connect} from 'react-redux';
 import {refreshSecrets} from './actions/actions';
+import {User, UserName} from "./Constant";
 
 
 class MySecretScreen extends React.Component {
 
   constructor(props) {
     super(props);
+
+    // User._name = "XiaoMing";
+    User.setName('XiaoQiang');
+    // alert(User.getName());
+    // alert(User._name);
+
 
     this.state = {secret: null,
                   publishing:false,
@@ -42,6 +49,7 @@ class MySecretScreen extends React.Component {
       this.refs['textInput'].clear();
       this.props.dispatch(refreshSecrets());
       alert('发布成功')
+
     }
 
 
@@ -57,6 +65,7 @@ class MySecretScreen extends React.Component {
   render() {
     return (
       <View style={MySecretScreenStyle.container}>
+        <Text>{UserName}</Text>
         <TextInput ref={'textInput'} style={MySecretScreenStyle.input} onChangeText={this.textChange} maxLength={1000}
                    multiline={true}></TextInput>
         <Button onPress={this.publishSecret} color="red" m style={MySecretScreenStyle.button}
