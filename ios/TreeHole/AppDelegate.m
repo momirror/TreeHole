@@ -9,7 +9,7 @@
 
 #import "AppDelegate.h"
 #import <CodePush/CodePush.h>
-
+#import <UserNotifications/UserNotifications.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 
